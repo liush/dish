@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dish.dao.StatisticsMapper">
+    <resultMap id="day" type="com.dish.domain.DayStatistics">
+        <id column="ID" property="id" javaType="String"/>
+        <result column="CONSUME_NUM" property="consumeNum" javaType="Long"/>
+        <result column="DISH_PRICE" property="dishPrice" javaType="Long"/>
+        <result column="WATER_PRICE" property="waterPrice" javaType="Long"/>
+        <result column="OTHER_PRICE" property="otherPrice" javaType="Long"/>
+        <result column="TOTAL_PRICE" property="totalPrice" javaType="Long"/>
+        <result column="PAY_PRICE" property="payPrice" javaType="Long"/>
+        <result column="CREATE_TIME" property="createTime" javaType="Long"/>
+        <result column="UPDATE_TIME" property="updateTime" javaType="Long"/>
+    </resultMap>
+
+
+</mapper>

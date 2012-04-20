@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dish.dao.InformationMapper">
+
+    <resultMap id="table" type="Table">
+        <id property="tableNo" column="TABLE_NO" javaType="String"/>
+        <result property="peopleNum" column="PEOPLE_NUM" javaType="Integer"/>
+        <result property="consumeId" column="CONSUME_ID" javaType="String"/>
+    </resultMap>
+
+    <resultMap id="information" type="Information">
+        <id property="id" column="ID" javaType="String"/>
+        <result property="name" column="NAME" javaType="String"/>
+        <result property="number" column="NUMBER" javaType="String"/>
+        <result property="spell" column="SPELL" javaType="String"/>
+        <result property="price" column="PRICE" javaType="Long"/>
+        <result property="type" column="TYPE" javaType="Short"/>
+        <result property="unit" column="UNIT" javaType="String"/>
+    </resultMap>
+
+
+    <insert id="saveTable" parameterType="table">
+        INSERT INTO tables (TABLE_NO,PEOPLE_NUM,CONSUME_ID)
+        VALUES (#{tableNo},#{peopleNum},#{consumeId});
+    </insert>
+
+    <update id="updateTable" parameterType="table">
+        UPDATE tables SET PEOPLE_NUM =#{peopleNum},CONSUME_ID=#{consumeId}
+        WHERE TABLE_NO = #{tableNo}
+    </update>
+
+    <insert id="saveInformation" parameterType="information">
+        INSERT INTO information (ID,NAME,NUMBER,SPELL,PRICE,TYPE,UNIT)
+        VALUES (#{id},#{name},#{number},#{spell},#{price},#{type},#{unit})
+    </insert>
+
+    <select id="queryAllTable" resultMap="table">
+        SELECT * FROM tables
+    </select>
+
+    <select id="queryAllInformation" resultMap="information">
+        SELECT * FROM information
+    </select>
+
+
+    <select id="getInformation" resultMap="information" parameterType="String">
+        SELECT * FROM information where information.ID = #{informationId}
+    </select>
+
+
+    <select id="getTable" resultMap="table" parameterType="String">
+        SELECT * FROM tables WHERE tables.TABLE_NO = #{tableNo}
+    </select>
+
+    <select id="queryInformation" parameterType="String" resultMap="information">
+        SELECT * FROM information
+        WHERE NUMBER LIKE #{q} OR SPELL LIKE #{q} OR NAME LIKE #{q} LIMIT 10
+    </select>
+
+    <delete id="delInformation" parameterType="String">
+        DELETE FROM information WHERE ID = #{id}
+    </delete>
+
+
+    <delete id="delTable" parameterType="String">
+        DELETE FROM tables WHERE TABLE_NO = #{tableNo}
+    </delete>
+
+
+    <select id="queryInformations" parameterType="com.dish.base.InformationQueryParam" resultMap="information">
+        SELECT * FROM information
+        <where>
+            <if test='name != null and name!="" '>
+                NAME like #{name}
+            </if>
+        </where>
+        LIMIT #{begin},#{end}
+    </select>
+
+    <select id="getInformationsCount" parameterType="com.dish.base.InformationQueryParam" resultType="Long">
+        SELECT COUNT(0) FROM information
+        <where>
+            <if test="name != null">
+                NAME like #{name}
+            </if>
+        </where>
+    </select>
+
+    <update id="updateInformation" parameterType="com.dish.domain.Information">
+        UPDATE information
+        SET
+        NAME = #{name} ,
+        NUMBER = #{number},
+        SPELL = #{spell} ,
+        PRICE = #{price} ,
+        TYPE = #{type} ,
+        ID = #{id} ,
+        UNIT = #{unit}
+        WHERE
+        ID = #{id} ;
+    </update>
+
+
+</mapper>

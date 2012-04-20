@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="dish:war exploded">
+    <output-path>$PROJECT_DIR$/target/dish-1.0</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="dish/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="dish" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

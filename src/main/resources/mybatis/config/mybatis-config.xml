@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="com.dish.domain.User" alias="User"/>
+        <typeAlias type="com.dish.domain.Table" alias="Table"/>
+        <typeAlias type="com.dish.domain.Information" alias="Information"/>
+        <typeAlias type="com.dish.domain.Consume" alias="Consume"/>
+        <typeAlias type="com.dish.domain.ConsumeDetail" alias="ConsumeDetail"/>
+        <typeAlias type="java.lang.String" alias="String"/>
+        <typeAlias type="java.lang.Short" alias="Short"/>
+        <typeAlias type="java.lang.Integer" alias="Integer"/>
+        <typeAlias type="java.lang.Long" alias="Long"/>
+        <typeAlias type="java.lang.Boolean" alias="Boolean"/>
+        <typeAlias type="java.lang.Double" alias="Double"/>
+    </typeAliases>
+
+</configuration>

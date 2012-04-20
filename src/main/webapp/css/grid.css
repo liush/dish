@@ -1,0 +1,191 @@
+/*
+*@name:ui-grid
+*@overview:表格组件
+*@required:null
+*/
+.ui-grid {
+    background: #fff;
+    width: 100%;
+}
+
+.ui-grid table {
+    width: 100%;
+}
+
+.ui-grid tr {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ui-grid td {
+    height: 25px;
+    line-height: 25px;
+    border-bottom: 1px solid #EEF2F3;
+    text-indent: 5px;
+}
+
+.ui-grid li img {
+    vertical-align: middle;
+}
+
+.ui-grid-head {
+    height: 30px;
+    width: 100%; /* overwrite,如果出现scroll,大小为表格宽度减去17px */
+    text-align: center; /* overwrite */
+}
+
+.ui-grid th {
+    height: 30px;
+    line-height: 30px;
+    text-indent: 5px;
+}
+
+.ui-grid-table-head tr{
+    background: url("../images/table_list_bg.gif") repeat-x top left;
+    height: 30px;
+    position: relative;
+}
+
+.ui-grid-table-head-line{
+    background: url("../images/table_line.gif") no-repeat left;
+}
+
+.ui-grid-table-head-sort {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    width: 8px;
+    height: 6px;
+}
+
+.ui-grid-table-head-sort-asc {
+    background: url("../images/asc.gif") no-repeat center;
+}
+
+.ui-grid-table-head-sort-desc {
+    background: url("../images/desc.gif") no-repeat center;
+}
+
+.ui-grid-body {
+    display: block;
+    width: 100%;
+}
+
+.ui-grid-body-tr-even {
+    background: #F8F8F8
+}
+
+.ui-grid-body-tr-hover {
+    background: #9cbbec;
+}
+
+.ui-grid-body-tr-selected {
+    background: #FFF6E4
+}
+
+.ui-grid-foot {
+    width: 100%;
+    height: 30px;
+    background: #F8F8F8;
+}
+
+.ui-page {
+    height: 30px;
+    float: right;
+    margin-right: 20px;
+}
+
+.ui-page a {
+    display: block;
+    float: left;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.ui-page span {
+    display: block;
+    float: left;
+    cursor: default;
+    margin-top: 3px;
+}
+
+.ui-page .ui-page-prev {
+    background: url("../images/page_button.png") no-repeat 0px 0px;
+    width: 80px;
+    height: 22px;
+    line-height: 22px;
+    text-indent: 30px;
+    color: #1B88CB;
+}
+
+.ui-page .ui-page-prev-disabled {
+    background: url("../images/page_button.png") no-repeat 0 -78px;
+    color: #999;
+    width: 80px;
+    height: 22px;
+    line-height: 22px;
+    text-indent: 30px;
+}
+
+.ui-page a.ui-page-prev:hover {
+    background: url("../images/page_button.png") no-repeat 0 -26px;
+    color: #1B88CB;
+    text-decoration: none;
+}
+
+.ui-page a.ui-page-prev:active {
+    background: url("../images/page_button.png") no-repeat 0 -52px;
+    color: #1B88CB;
+}
+
+.ui-page .ui-page-next {
+    background: url("../images/page_button.png") no-repeat -81px 0;
+    width: 80px;
+    height: 22px;
+    line-height: 22px;
+    text-indent: 15px;
+    color: #1B88CB;
+}
+
+.ui-page .ui-page-next-disabled {
+    background: url("../images/page_button.png") no-repeat -81px -78px;
+    color: #999;
+    width: 80px;
+    height: 22px;
+    line-height: 22px;
+    text-indent: 15px;
+}
+
+.ui-page a.ui-page-next:hover {
+    background: url("../images/page_button.png") no-repeat -81px -26px;
+    color: #1B88CB;
+    text-decoration: none;
+}
+
+.ui-page a.ui-page-next:active {
+    background: url("../images/page_button.png") no-repeat -81px -52px;
+    color: #1B88CB;
+}
+
+.ui-page .ui-page-item {
+    text-align: center;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+    border: 1px solid #C8C8C8;
+    margin: 3px 2px auto 2px;
+}
+
+.ui-page  a.ui-page-item:hover{
+    border:  1px solid #1388CB;
+    color: #1388CB;
+    text-decoration: none;
+}
+
+.ui-page .ui-page-current {
+    background: #1388CB;
+    border: 1px solid #1388CB;
+    color: white;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dish.dao.UserMapper">
+
+    <resultMap id="user" type="User">
+        <id property="userName" column="USER_NAME" javaType="String"/>
+        <result property="password" column="PASSWORD" javaType="String"/>
+        <result property="realName" column="REAL_NAME" javaType="String"/>
+        <result property="userType" column="USER_TYPE" javaType="Short"/>
+    </resultMap>
+
+
+    <select id="get" resultMap="user" parameterType="String">
+        SELECT USER_NAME,PASSWORD,REAL_NAME,USER_TYPE FROM user WHERE user.USER_NAME = #{userName}
+    </select>
+
+    <insert id="save" parameterType="User">
+        INSERT INTO user(USER_NAME,PASSWORD,REAL_NAME,USER_TYPE)
+        values (#{userName},#{password},#{realName},#{userType});
+    </insert>
+
+    <select id="queryAll" resultMap="user">
+        SELECT USER_NAME,PASSWORD,REAL_NAME,USER_TYPE FROM user
+    </select>
+
+    <delete id="delUser" parameterType="String">
+        DELETE FROM user WHERE USER_NAME = #{userName}
+    </delete>
+
+    <update id="update" parameterType="com.dish.domain.User">
+        UPDATE user SET
+        PASSWORD = #{password},
+        REAL_NAME = #{realName},
+        USER_TYPE = #{userType}
+        WHERE
+        USER_NAME = #{userName}
+    </update>
+
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dish.dao.UserLogMapper">
+
+    <resultMap id="usrLog" type="com.dish.domain.UserLog">
+        <id property="userName" column="USER_NAME" javaType="String"/>
+        <result property="comment" column="COMMENT" javaType="String"/>
+        <result property="time" column="TIME" javaType="Long"/>
+    </resultMap>
+
+
+    <insert id="save" parameterType="com.dish.domain.UserLog">
+        INSERT INTO user(USER_NAME,COMMENT,TIME)
+        values (#{userName},#{comment},#{time});
+    </insert>
+
+</mapper>

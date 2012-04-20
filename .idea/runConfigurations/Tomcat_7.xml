@@ -1,0 +1,80 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Tomcat 7" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7">
+    <option name="OPEN_IN_BROWSER" value="false" />
+    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/dish/" />
+    <option name="COMMON_VM_ARGUMENTS" value="-Xms128M -Xmx256M" />
+    <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+    <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+    <option name="UPDATING_POLICY" value="restart-server" />
+    <deployment>
+      <artifact name="dish:war exploded">
+        <settings>
+          <option name="CONTEXT_PATH" value="/dish" />
+        </settings>
+      </artifact>
+    </deployment>
+    <server-settings>
+      <option name="BASE_DIRECTORY_NAME" value="Unnamed_dish" />
+      <option name="DEPLOY_TOMCAT_APPS" value="true" />
+    </server-settings>
+    <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+    <extension name="coverage" enabled="false" merge="false" runner="idea" />
+    <RunnerSettings RunnerId="Cover" />
+    <RunnerSettings RunnerId="Debug">
+      <option name="DEBUG_PORT" value="1474" />
+      <option name="TRANSPORT" value="0" />
+      <option name="LOCAL" value="true" />
+    </RunnerSettings>
+    <RunnerSettings RunnerId="Run" />
+    <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+      <option name="USE_ENV_VARIABLES" value="true" />
+      <STARTUP>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="                                       " />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+      </STARTUP>
+      <SHUTDOWN>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="                                       " />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="" />
+      </SHUTDOWN>
+    </ConfigurationWrapper>
+    <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+      <option name="USE_ENV_VARIABLES" value="true" />
+      <STARTUP>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="%IDEA_RUN:TOMCAT_HOME%/bin/catalina.bat" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="run" />
+      </STARTUP>
+      <SHUTDOWN>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="%IDEA_RUN:TOMCAT_HOME%/bin/catalina.bat" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="stop" />
+      </SHUTDOWN>
+    </ConfigurationWrapper>
+    <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+      <option name="USE_ENV_VARIABLES" value="true" />
+      <STARTUP>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="%IDEA_RUN:TOMCAT_HOME%/bin/catalina.bat" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="run" />
+      </STARTUP>
+      <SHUTDOWN>
+        <option name="USE_DEFAULT" value="true" />
+        <option name="SCRIPT" value="%IDEA_RUN:TOMCAT_HOME%/bin/catalina.bat" />
+        <option name="VM_PARAMETERS" value="" />
+        <option name="PROGRAM_PARAMETERS" value="stop" />
+      </SHUTDOWN>
+    </ConfigurationWrapper>
+    <method>
+      <option name="BuildArtifacts" enabled="true">
+        <artifact name="dish:war exploded" />
+      </option>
+    </method>
+  </configuration>
+</component>

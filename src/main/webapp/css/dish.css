@@ -1,0 +1,244 @@
+.body {
+    margin: auto;
+    width: 980px;
+    height: 100%;
+    border: 1px solid #cccccc;
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.login {
+    width: 300px;
+    margin-top: 200px;
+}
+
+.login-top {
+}
+
+.login-table {
+    line-height: 45px;
+    width: 100%;
+}
+
+.login-bottom {
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.input {
+    width: 180px;
+    height: 25px;
+    line-height: 25px;
+    border: 1px solid #999999;
+}
+
+.button {
+    width: 120px;
+    height: 28px;
+    line-height: 28px;
+}
+
+.tip{
+    text-indent: 20px;
+    height: 25px;
+    line-height: 25px;
+}
+.tip em{
+    color: red;
+}
+
+/*后台页面css*/
+.top {
+    width: 100%;
+    border: 1px solid #cccccc;
+}
+
+.top-tip {
+    float: right;
+    height: 30px;
+    line-height: 30px;
+}
+
+.top-menu {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 150px;
+}
+
+.top-menu-item {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    width: 100px;
+    text-align: center;
+    border: 1px solid #C8C8C8;
+    border-bottom: 0;
+    margin-right: 10px;
+    background: #C8C8C8;
+}
+
+.top-menu-item-selected {
+    background: #fff;
+    border: 1px solid #cccccc;
+    border-bottom: 0;
+}
+
+/*left start*/
+.left {
+    width: 100px;
+    height: 100%;
+    border-top: 0;
+    float: left;
+}
+
+.left-menu{
+    line-height: 30px;
+}
+.left-menu-item{
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    border: 1px solid #cccccc;
+    margin: 1px;
+    background: #c8c8c8;
+}
+.left-menu-item-selected{
+    background: #fff;
+}
+
+/*left end*/
+/*right start*/
+.right {
+    float: right;
+    width: 875px;
+}
+
+.right-top {
+    height: 40px;
+    line-height: 40px;
+}
+
+.right-grid {
+    width: 100%;
+}
+
+.right-table {
+    width: 100%;
+}
+
+.right-table th {
+    border: 1px solid #cccccc;
+}
+
+.right-table td {
+    border: 1px solid #cccccc;
+}
+
+/*right end*/
+
+/*form table start*/
+.form-table {
+    width: 100%;
+    line-height: 30px;
+}
+
+.form-table-name {
+    width: 150px;
+    text-align: right;
+}
+
+.form-table-value {
+    width: 200px;
+}
+
+.form-table-tip {
+    text-align: left;
+    color: red;
+}
+
+/*form table end*/
+
+.select-list {
+    position: absolute;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.select-list-item {
+    height: 30px;
+    line-height: 30px;
+    width: 180px;
+}
+
+.select-list-item-hover {
+    background: #67b2f2;
+}
+
+.search-div {
+    padding: 20px;
+}
+
+.bottom-div {
+    padding: 20px;
+}
+
+.span-margin-right20 {
+    margin-right: 20px;;
+}
+
+.span-margin-left20 {
+    margin-left: 20px;;
+}
+
+/*table start*/
+.table-list {
+    width: 100%;
+}
+
+.table-list-item {
+    float: left;
+    width: 100px;
+    height: 60px;
+    color: white;
+    border: 1px solid #cccccc;
+    background: #575e42;
+    margin: 20px;
+}
+
+.table-list-item-green {
+    border: 1px solid #48a25d;
+    background: #33bf41;
+}
+
+/*table end*/
+
+.body-bottom {
+    border-top: 1px solid #cccccc;
+    padding: 20px;
+}
+
+.body-bottom span {
+    margin-right: 20px;
+}
+
+/*right menu start*/
+.right-menu {
+    position: absolute;
+    width: 80px;
+    border: 1px solid #cccccc;
+    background: #ffffff;
+}
+
+.right-menu-item {
+    height: 30px;
+    line-height: 30px;
+    width: 80px;
+}
+
+.right-menu-item:hover {
+    background: #1388CB;
+}
+
+/*right menu end*/

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dish.dao.ConsumeMapper">
+
+    <resultMap id="consume" type="Consume">
+        <id column="ID" property="id" javaType="String"/>
+        <result column="TABLE_NO" property="tableNo" javaType="String"/>
+        <result column="PEOPLE_NUM" property="peopleNum" javaType="Integer"/>
+        <result column="DISH_PRICE" property="dishPrice" javaType="Long"/>
+        <result column="WATER_PRICE" property="waterPrice" javaType="Long"/>
+        <result column="OTHER_PRICE" property="otherPrice" javaType="Long"/>
+        <result column="TOTAL_PRICE" property="totalPrice" javaType="Long"/>
+        <result column="TYPE" property="type" javaType="Short"/>
+        <result column="MONEY" property="money" javaType="Long"/>
+        <result column="ORDER_NO" property="orderNo" javaType="String"/>
+        <result column="CREATE_TIME" property="createTime" javaType="Long"/>
+        <result column="UPDATE_TIME" property="updateTime" javaType="Long"/>
+        <result column="DISCOUNT" property="discount" javaType="Double"/>
+        <result column="ACTUAL_PRICE" property="actualPrice" javaType="Long"/>
+        <result column="UNIT" property="unit" javaType="String"/>
+    </resultMap>
+
+    <resultMap id="consumeDetail" type="ConsumeDetail">
+        <id column="ID" property="id" javaType="String"/>
+        <result column="CONSUME_ID" property="consumeId" javaType="String"/>
+        <result column="INFORMATION_ID" property="informationId" javaType="String"/>
+        <result column="COUNT" property="count" javaType="Integer"/>
+        <result column="PRICE" property="price" javaType="Long"/>
+        <result column="TYPE" property="type" javaType="Short"/>
+        <result column="NAME" property="name" javaType="String"/>
+        <result column="CREATE_TIME" property="createTime" javaType="Long"/>
+        <result column="UPDATE_TIME" property="updateTime" javaType="Long"/>
+    </resultMap>
+
+
+    <insert id="saveConsume" parameterType="Consume">
+        INSERT INTO consume (ID,TABLE_NO,PEOPLE_NUM,DISH_PRICE,WATER_PRICE,OTHER_PRICE,
+        TOTAL_PRICE,TYPE,MONEY,ORDER_NO,CREATE_TIME,UPDATE_TIME,DISCOUNT,ACTUAL_PRICE)
+        VALUES (#{id},#{tableNo},#{peopleNum},#{dishPrice},#{waterPrice},#{otherPrice},
+        #{totalPrice},#{type},#{money},#{orderNo},#{createTime},#{updateTime},#{discount},#{actualPrice})
+    </insert>
+
+    <select id="getConsume" parameterType="String" resultMap="consume">
+        SELECT * FROM  consume
+        WHERE ID = #{id}
+    </select>
+
+    <select id="getConsumeDetail" parameterType="String" resultMap="consumeDetail">
+        SELECT *  FROM consume_details
+        WHERE ID = #{id}
+        ORDER BY UPDATE_TIME DESC
+    </select>
+
+    <select id="getConsumeDetails" parameterType="String" resultMap="consumeDetail">
+        SELECT * FROM consume_details
+        WHERE CONSUME_ID = #{consumeId}
+    </select>
+
+    <insert id="saveConsumeDetail" parameterType="consumeDetail">
+        INSERT INTO consume_details (id,CONSUME_ID,INFORMATION_ID,COUNT,PRICE,TYPE,NAME,UNIT,CREATE_TIME,UPDATE_TIME)
+        VALUES (#{id},#{consumeId},#{informationId},#{count},#{price},#{type},#{name},#{unit},#{createTime},#{updateTime});
+    </insert>
+
+    <update id="updateConsume" parameterType="Consume">
+        UPDATE consume SET
+        TABLE_NO = #{tableNo},
+        PEOPLE_NUM = #{peopleNum},
+        DISH_PRICE = #{dishPrice},
+        WATER_PRICE = #{waterPrice},
+        OTHER_PRICE = #{otherPrice},
+        TOTAL_PRICE = #{totalPrice},
+        TYPE = #{type},
+        MONEY = #{money},
+        ORDER_NO = #{orderNo},
+        CREATE_TIME=#{createTime},
+        UPDATE_TIME=#{updateTime},
+        DISCOUNT=#{discount},
+        ACTUAL_PRICE=#{actualPrice}
+        WHERE
+        ID = #{id}
+    </update>
+
+    <update id="updateConsumeDetails" parameterType="ConsumeDetail">
+        UPDATE consume_details SET
+        CONSUME_ID = #{consumeId},
+        INFORMATION_ID = #{informationId} ,
+        COUNT = #{count},
+        PRICE = #{price} ,
+        TYPE = #{type} ,
+        NAME = #{name},
+        CREATE_TIME=#{createTime},
+        UPDATE_TIME=#{updateTime},
+        UNIT = #{unit}
+        WHERE
+        ID = #{id}
+    </update>
+
+    <delete id="deleteConsumeDetail" parameterType="String">
+        DELETE FROM consume_details WHERE id = #{id};
+    </delete>
+
+    <update id="countPrice" parameterType="String">
+        UPDATE consume
+        SET consume.DISH_PRICE = (SELECT
+        SUM(consume_details.price * consume_details.COUNT)
+        FROM consume_details
+        WHERE consume_details.CONSUME_ID = consume.ID
+        AND consume_details.TYPE = '1'),
+        consume.WATER_PRICE = (SELECT
+        SUM(consume_details.price * consume_details.COUNT)
+        FROM consume_details
+        WHERE consume_details.CONSUME_ID = consume.ID
+        AND consume_details.TYPE = '2'),
+        consume.OTHER_PRICE = (SELECT
+        SUM(consume_details.price * consume_details.COUNT)
+        FROM consume_details
+        WHERE consume_details.CONSUME_ID = consume.ID
+        AND consume_details.TYPE = '3'),
+        consume.TOTAL_PRICE = (SELECT
+        SUM(consume_details.price * consume_details.COUNT)
+        FROM consume_details
+        WHERE consume_details.CONSUME_ID = consume.ID)
+        WHERE consume.ID = #{consumeId}
+    </update>
+
+    <select id="queryConsume" parameterType="com.dish.base.QueryParam" resultMap="consume">
+        SELECT * FROM consume
+        <where>
+             <if test="beginTime > 0">
+                AND CREATE_TIME >= #{beginTime}
+             </if>
+            <if test="endTime > 0">
+                AND CREATE_TIME <![CDATA[<]]> #{endTime}
+            </if>
+        </where>
+        ORDER BY CREATE_TIME DESC LIMIT #{begin},#{end}
+    </select>
+
+    <select id="getConsumeCount" parameterType="com.dish.base.QueryParam" resultType="Long">
+        SELECT COUNT(0) FROM consume
+        <where>
+            <if test="beginTime > 0">
+                AND CREATE_TIME >= #{beginTime}
+            </if>
+            <if test="endTime > 0">
+                AND CREATE_TIME <![CDATA[<]]> #{endTime}
+            </if>
+        </where>
+    </select>
+
+    <select id="getTodayMaxOrderNo" parameterType="java.util.Map" resultType="String">
+        SELECT MAX(ORDER_NO) FROM consume WHERE CREATE_TIME BETWEEN #{today} AND #{tomorrow}
+    </select>
+
+</mapper>
