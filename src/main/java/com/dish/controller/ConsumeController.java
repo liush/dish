@@ -12,6 +12,7 @@ import com.dish.util.DateUtil;
 import com.dish.util.JSONUtil;
 import com.dish.util.PriceUtil;
 import com.dish.util.PrintUtil;
+import freemarker.template.TemplateException;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.accessibility.AccessibleStateSet;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -362,11 +365,14 @@ public class ConsumeController {
     }
 
     @RequestMapping(value = "/print")
-    @ResponseBody
-    public String print(@RequestParam("consumeId") String consumeId) {
+    public void print(@RequestParam("consumeId") String consumeId
+            , HttpServletResponse response) throws IOException, TemplateException {
         Consume consume = consumeService.getConsume(consumeId, true);
-        boolean print = PrintUtil.print(consume);
-        return String.valueOf(print);
+        Map<String, Object> view = PrintUtil.createView(consume);
+        String s = PrintUtil.buildHtml(view);
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(s);
+        response.flushBuffer();
     }
 
     private List<DetailView> buildViewByInformation(List<Information> informations) {

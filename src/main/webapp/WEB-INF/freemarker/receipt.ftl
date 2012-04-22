@@ -143,5 +143,8 @@
 <#--<div>找零：${(consume.money - consume.actualPrice)/100}</div>-->
 <div class="line"></div>
 <div>电话：5989877</div>
+<script type="text/javascript">
+    window.print();
+</script>
 </body>
 </html>

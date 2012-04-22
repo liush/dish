@@ -12,7 +12,6 @@
           <element id="library" level="project" name="Maven: com.lowagie:itext:2.1.0" />
           <element id="library" level="project" name="Maven: bouncycastle:bcmail-jdk14:136" />
           <element id="library" level="project" name="Maven: bouncycastle:bcprov-jdk14:136" />
-          <element id="library" level="project" name="Maven: gui.ava:html2image:0.9" />
           <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.19" />
           <element id="library" level="project" name="Maven: cglib:cglib-nodep:2.2" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.6.2" />

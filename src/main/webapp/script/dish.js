@@ -8,6 +8,7 @@ $(document).ready(function () {
     var $other_price = $("#other_price");
     var $total_price = $("#total_price");
     var $back = $("#back");
+    var $discount = $("#discount");
 
     grid = (function () {
         var heads = [
@@ -148,7 +149,6 @@ $(document).ready(function () {
         var dish_price = 0;
         var water_price = 0;
         var other_price = 0;
-        var total_price = 0;
         for (var i = 0; i < data.length; i++) {
             var item = data[i];
             var input = $("#" + item.informationId);
@@ -223,6 +223,18 @@ $(document).ready(function () {
             success:function (data) {
                 grid.render(data);
                 countMoney(data);
+                try {
+                    if ($discount.length > 0) {
+                        var $actualPrice = $("#actualPrice");
+                        var $change = $("#change");
+                        var discount = $discount.val();
+                        var dish_price = parseFloat($dish_price.text());
+                        var actualPrice = Math.round(discount * dish_price / 10) + parseFloat($water_price.text()) + parseFloat($other_price.text());
+                        $actualPrice.text(actualPrice);
+                        $change.text(-actualPrice);
+                    }
+                } catch (e) {
+                }
             },
             error:function () {
                 alert("操作失败，请联系管理员。");

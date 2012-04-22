@@ -2,29 +2,11 @@ package com.dish.util;
 
 import com.dish.domain.Consume;
 import com.dish.domain.ConsumeDetail;
-import com.dish.domain.Information;
-import gui.ava.html.image.generator.HtmlImageGenerator;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import javax.imageio.ImageIO;
-import javax.print.*;
-import javax.print.attribute.HashDocAttributeSet;
-import javax.print.attribute.HashPrintRequestAttributeSet;
-import javax.swing.*;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableColumn;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.UUID;
 
 /**
  * Created with IntelliJ IDEA.

@@ -107,6 +107,7 @@ public class ConsumeService {
         consumeDetail.setCount(count);
         consumeDetail.setUpdateTime(System.currentTimeMillis());
         consumeDao.updateConsumeDetails(consumeDetail);
+        this.countMoney(consumeDetail.getConsumeId());
     }
 
     public void saveConsumeDetails(ConsumeDetail detail) {
@@ -114,6 +115,7 @@ public class ConsumeService {
         detail.setCreateTime(time);
         detail.setUpdateTime(time);
         consumeDao.saveConsumeDetail(detail);
+        this.countMoney(detail.getConsumeId());
     }
 
     public void countMoney(String consumeId) {

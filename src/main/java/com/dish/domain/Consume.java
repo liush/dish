@@ -24,7 +24,7 @@ public class Consume {
     private long totalPrice; // 总额
     private short type; // 0 未结算 1，已结算 2，反结算
     private long money; //客户实付款金额
-    private double discount; //折扣
+    private double discount = 10.0d; //折扣 默认是10折
     private long actualPrice; //折扣后总额
 
     private String orderNo;

@@ -1,7 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Tomcat 7" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7">
     <option name="OPEN_IN_BROWSER" value="false" />
-    <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/dish/" />
     <option name="COMMON_VM_ARGUMENTS" value="-Xms128M -Xmx256M" />
     <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
     <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
@@ -21,7 +20,7 @@
     <extension name="coverage" enabled="false" merge="false" runner="idea" />
     <RunnerSettings RunnerId="Cover" />
     <RunnerSettings RunnerId="Debug">
-      <option name="DEBUG_PORT" value="1474" />
+      <option name="DEBUG_PORT" value="1475" />
       <option name="TRANSPORT" value="0" />
       <option name="LOCAL" value="true" />
     </RunnerSettings>
@@ -30,13 +29,13 @@
       <option name="USE_ENV_VARIABLES" value="true" />
       <STARTUP>
         <option name="USE_DEFAULT" value="true" />
-        <option name="SCRIPT" value="                                       " />
+        <option name="SCRIPT" value="                                         " />
         <option name="VM_PARAMETERS" value="" />
         <option name="PROGRAM_PARAMETERS" value="" />
       </STARTUP>
       <SHUTDOWN>
         <option name="USE_DEFAULT" value="true" />
-        <option name="SCRIPT" value="                                       " />
+        <option name="SCRIPT" value="                                         " />
         <option name="VM_PARAMETERS" value="" />
         <option name="PROGRAM_PARAMETERS" value="" />
       </SHUTDOWN>
@@ -45,13 +44,13 @@
       <option name="USE_ENV_VARIABLES" value="true" />
       <STARTUP>
         <option name="USE_DEFAULT" value="true" />
-        <option name="SCRIPT" value="%IDEA_RUN:TOMCAT_HOME%/bin/catalina.bat" />
+        <option name="SCRIPT" value="F:\apache-tomcat-7.0.26\bin\catalina.bat" />
         <option name="VM_PARAMETERS" value="" />
         <option name="PROGRAM_PARAMETERS" value="run" />
       </STARTUP>
       <SHUTDOWN>
         <option name="USE_DEFAULT" value="true" />
-        <option name="SCRIPT" value="%IDEA_RUN:TOMCAT_HOME%/bin/catalina.bat" />
+        <option name="SCRIPT" value="F:\apache-tomcat-7.0.26\bin\catalina.bat" />
         <option name="VM_PARAMETERS" value="" />
         <option name="PROGRAM_PARAMETERS" value="stop" />
       </SHUTDOWN>
@@ -60,13 +59,13 @@
       <option name="USE_ENV_VARIABLES" value="true" />
       <STARTUP>
         <option name="USE_DEFAULT" value="true" />
-        <option name="SCRIPT" value="%IDEA_RUN:TOMCAT_HOME%/bin/catalina.bat" />
+        <option name="SCRIPT" value="F:\apache-tomcat-7.0.26\bin\catalina.bat" />
         <option name="VM_PARAMETERS" value="" />
         <option name="PROGRAM_PARAMETERS" value="run" />
       </STARTUP>
       <SHUTDOWN>
         <option name="USE_DEFAULT" value="true" />
-        <option name="SCRIPT" value="%IDEA_RUN:TOMCAT_HOME%/bin/catalina.bat" />
+        <option name="SCRIPT" value="F:\apache-tomcat-7.0.26\bin\catalina.bat" />
         <option name="VM_PARAMETERS" value="" />
         <option name="PROGRAM_PARAMETERS" value="stop" />
       </SHUTDOWN>

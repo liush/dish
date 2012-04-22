@@ -117,10 +117,10 @@ public class PrintUtil {
 
     public static String buildHtml(Map<String, Object> map) throws IOException, TemplateException {
         Template template = CONFIGURATION.getTemplate("receipt.ftl","UTF-8");
-        String fileName = WEB_ROOT_TEMP + UUID.randomUUID().toString();
-        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName + ".html"),"UTF-8");
-        template.process(map, outputStreamWriter);
-        return fileName;
+        StringWriter writer = new StringWriter();
+        template.setEncoding("UTF-8");
+        template.process(map, writer);
+        return writer.toString();
     }
 
     public static void createImage(String fileFullName) throws IOException {

@@ -9,6 +9,10 @@
         <webroots>
           <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
         </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/main/java" />
+          <root url="file://$MODULE_DIR$/src/main/resources" />
+        </sourceRoots>
       </configuration>
     </facet>
     <facet type="Spring" name="Spring">
@@ -33,7 +37,6 @@
     <orderEntry type="library" name="Maven: com.lowagie:itext:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: bouncycastle:bcmail-jdk14:136" level="project" />
     <orderEntry type="library" name="Maven: bouncycastle:bcprov-jdk14:136" level="project" />
-    <orderEntry type="library" name="Maven: gui.ava:html2image:0.9" level="project" />
     <orderEntry type="library" name="Maven: org.freemarker:freemarker:2.3.19" level="project" />
     <orderEntry type="library" name="Maven: cglib:cglib-nodep:2.2" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjrt:1.6.2" level="project" />

@@ -120,8 +120,9 @@
         consume.TOTAL_PRICE = (SELECT
         SUM(consume_details.price * consume_details.COUNT)
         FROM consume_details
-        WHERE consume_details.CONSUME_ID = consume.ID)
-        WHERE consume.ID = #{consumeId}
+        WHERE consume_details.CONSUME_ID = consume.ID),
+        consume.actual_price = ROUND(consume.TOTAL_PRICE * consume.discount /1000) * 100
+        WHERE consume.ID =  #{consumeId}
     </update>
 
     <select id="queryConsume" parameterType="com.dish.base.QueryParam" resultMap="consume">

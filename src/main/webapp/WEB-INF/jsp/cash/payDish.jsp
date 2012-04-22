@@ -16,8 +16,8 @@
             var $other_price = $("#other_price");
             var $pay = $("#pay");
             var $discount = $("#discount");
-            var $actualPrice = $("#actualPrice");
             var $total_price = $("#total_price");
+            var $actualPrice = $("#actualPrice");
             var $change = $("#change");
             var $print = $("#print");
 
@@ -27,19 +27,20 @@
                     return false;
                 }
                 $this.addClass("disabled");
-                $.myAjax({
-                    type:"post",
-                    url:contextPath + "/home/print",
-                    data:{consumeId:consumeId},
-                    dataType:"json",
-                    success:function (data) {
-
-                    },
-                    error:function () {
-                        alert("操作失败，请联系管理员。");
-                    }
-
-                });
+                window.open(contextPath + "/home/print?consumeId="+consumeId);
+//                $.myAjax({
+//                    type:"post",
+//                    url:contextPath + "/home/print",
+//                    data:{consumeId:consumeId},
+//                    dataType:"json",
+//                    success:function (data) {
+//
+//                    },
+//                    error:function () {
+//                        alert("操作失败，请联系管理员。");
+//                    }
+//
+//                });
                 $this.removeClass("disabled");
             });
 
@@ -75,7 +76,6 @@
                     $money.focus();
                     return false;
                 }
-                $this.addClass("disabled");
                 var newData = grid.getData();
                 var length = newData.length;
                 if (length == 0) {
