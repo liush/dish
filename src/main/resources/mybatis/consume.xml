@@ -25,7 +25,7 @@
         <id column="ID" property="id" javaType="String"/>
         <result column="CONSUME_ID" property="consumeId" javaType="String"/>
         <result column="INFORMATION_ID" property="informationId" javaType="String"/>
-        <result column="COUNT" property="count" javaType="Integer"/>
+        <result column="COUNT" property="count" javaType="String"/>
         <result column="PRICE" property="price" javaType="Long"/>
         <result column="TYPE" property="type" javaType="Short"/>
         <result column="NAME" property="name" javaType="String"/>

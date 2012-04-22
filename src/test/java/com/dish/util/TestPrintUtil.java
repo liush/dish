@@ -34,7 +34,7 @@ public class TestPrintUtil {
         for (int i = 1; i < 10; i++) {
             ConsumeDetail detail = new ConsumeDetail();
             detail.setName(i + "测试");
-            detail.setCount(i + 1);
+            detail.setCount(i + "1");
             detail.setPrice(i * 100);
             detail.setType(Short.valueOf(String.valueOf(i % 3)));
             details.add(detail);
@@ -57,7 +57,7 @@ public class TestPrintUtil {
         for (int i = 1; i < 10; i++) {
             ConsumeDetail detail = new ConsumeDetail();
             detail.setName(i + "测试");
-            detail.setCount(i + 1);
+            detail.setCount(i + "1");
             detail.setPrice(i * 100);
             detail.setType(Short.valueOf(String.valueOf(i % 3)));
             details.add(detail);

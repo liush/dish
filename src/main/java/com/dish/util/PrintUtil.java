@@ -92,15 +92,15 @@ public class PrintUtil {
         for (ConsumeDetail detail : details) {
             if (detail.getType() == Information.DISH) {
                 dishes.add(detail);
-                dishCount+=detail.getCount();
+                dishCount+=Double.valueOf(detail.getCount());
             }
             if (detail.getType() == Information.WATER) {
                 waters.add(detail);
-                waterCount+=detail.getCount();
+                waterCount+=Double.valueOf(detail.getCount());
             }
             if (detail.getType() == Information.OTHER) {
                 others.add(detail);
-                otherCount+=detail.getCount();
+                otherCount+=Double.valueOf(detail.getCount());
             }
         }
         HashMap<String, Object> map = new HashMap<String, Object>();

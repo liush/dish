@@ -102,7 +102,7 @@ public class ConsumeService {
         consumeDao.deleteConsumeDetail(id);
     }
 
-    public void updateCount(String id, int count) {
+    public void updateCount(String id, String count) {
         ConsumeDetail consumeDetail = consumeDao.getConsumeDetail(id);
         consumeDetail.setCount(count);
         consumeDetail.setUpdateTime(System.currentTimeMillis());

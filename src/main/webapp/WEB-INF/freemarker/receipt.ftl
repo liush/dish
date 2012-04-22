@@ -5,7 +5,7 @@
     <title>谷穗缘餐饮系统</title>
     <style type="text/css">
         body {
-            width: 200px;
+            width: 48mm;
             border: 0;
             margin: 0;
             padding: 0;
@@ -120,6 +120,7 @@
         <tr>
             <td style="text-align: left">${item.name}</td>
             <td>${item.count}</td>
+            <td>${item.price/100}</td>
             <td>${item.count*item.price/100}</td>
         </tr>
         </#list>

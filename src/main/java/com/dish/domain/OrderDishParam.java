@@ -31,7 +31,7 @@ public class OrderDishParam {
     private String consumeId;
     private String informationId;
     private String detailId;
-    private int count;
+    private String count;
     private short type; // 操作类型 1：新增 2：更新  3：删除
 
     public String getDishPrice() {
@@ -98,11 +98,11 @@ public class OrderDishParam {
         this.detailId = detailId;
     }
 
-    public int getCount() {
+    public String getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(String count) {
         this.count = count;
     }
 

@@ -13,7 +13,7 @@
                     {title:"类别", text:"类别"},
                     {title:"数量", text:"数量"},
                     {title:"备注", text:"备注"},
-                    {title:"小计", text:"小计"},
+                    {title:"小计", text:"小计"}
                 ];
                 var columns = [
                     {name:"name"},

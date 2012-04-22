@@ -12,7 +12,7 @@ public class DetailView {
     private String detailId;
     private String consumeId;
     private String informationId;
-    private int count;
+    private String count;
     private String name;
     private long price; //价格 单位：分
     private short type;
@@ -42,11 +42,11 @@ public class DetailView {
         this.informationId = informationId;
     }
 
-    public int getCount() {
+    public String getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(String count) {
         this.count = count;
     }
 

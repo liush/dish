@@ -23,13 +23,13 @@ public class TestJSONUtil {
     public void testParseObject() throws Exception {
         ConsumeDetail detail1 = new ConsumeDetail();
         detail1.setInformationId("1");
-        detail1.setCount(1);
+        detail1.setCount("1");
         String s = JSONUtil.parseToString(detail1);
         Assert.notNull(s);
         ConsumeDetail detail = JSONUtil.parseJSONObject(s, ConsumeDetail.class);
         Assert.notNull(detail);
         Assert.hasText(detail.getInformationId());
-        Assert.isTrue(detail.getCount() != 0);
+        Assert.isTrue(!detail.getCount().equals("0"));
     }
 
     @Test
@@ -38,7 +38,7 @@ public class TestJSONUtil {
         for (int i = 0; i < 2; i++) {
             ConsumeDetail detail1 = new ConsumeDetail();
             detail1.setInformationId("1");
-            detail1.setCount(1);
+            detail1.setCount("1");
             consumeDetails.add(detail1);
         }
         String s = JSONUtil.parseToString(consumeDetails);

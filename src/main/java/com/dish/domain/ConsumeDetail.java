@@ -16,7 +16,7 @@ public class ConsumeDetail {
     @JsonProperty
     private String informationId;
     @JsonProperty
-    private int count;
+    private String count;
     private long price;
     private short type;
     private String name;
@@ -72,11 +72,11 @@ public class ConsumeDetail {
         this.consumeId = consumeId;
     }
 
-    public int getCount() {
+    public String getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(String count) {
         this.count = count;
     }
 
