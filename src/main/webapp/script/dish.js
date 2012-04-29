@@ -47,8 +47,7 @@ $(document).ready(function () {
                 if (!item.count) {
                     item.count = 1;
                 }
-
-                var input = $('<input id="' + item.informationId + '" type="text" class="input" value="' + item.count + '">');
+                var input = $('<input id="' + item.detailId + '" type="text" class="input" value="' + item.count + '">');
 
                 input.keydown(function (e) {
                     if (e.keyCode == 13) {
@@ -126,20 +125,9 @@ $(document).ready(function () {
     function checkCallBack(item) {
         if (item != null) {
             var data = grid.getData();
-            var exists = false;
-            for (var i = 0; i < data.length; i++) {
-                var id = data[i].informationId;
-                if (id == item.informationId) {
-                    exists = true;
-                    $("#" + item.informationId).select();
-                    break;
-                }
-            }
-            if (!exists) {
-                data.push(item);
-                grid.render(data);
-                $("#" + item.informationId).select();
-            }
+            data.push(item);
+            grid.render(data);
+            $("#" + item.detailId).select();
             $q.val("");
             select.clear();
         }
@@ -151,7 +139,7 @@ $(document).ready(function () {
         var other_price = 0;
         for (var i = 0; i < data.length; i++) {
             var item = data[i];
-            var input = $("#" + item.informationId);
+            var input = $("#" + item.detailId);
             var n = input.val();
             var type = item.type;
             if (type == Information.DISH) {

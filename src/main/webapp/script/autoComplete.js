@@ -51,7 +51,7 @@
 
         function build(p, array) {
             var ul = $('<ul id="select_list" class="select-list"></ul>');
-            ul.offset({top:p.top, left:p.left});
+            ul.css({top:p.top, left:p.left});
             for (var i = 0; i < array.length; i++) {
                 var item = array[i];
                 var li = $('<li class="select-list-item"><span class="fn-left">' + item.name +
@@ -66,7 +66,7 @@
                     function () {
                         $(this).removeClass("select-list-item-hover");
                     }).click(function () {
-                        p.callback(li.data("item"));
+                        p.callback($(this).data("item"));
                         othis.clear();
                     });
                 li.data("item", item);

@@ -63,7 +63,7 @@
             <td style="text-align: left">${item.name}</td>
             <td>${item.count}</td>
             <td>${item.price/100}</td>
-            <td>${item.count*item.price/100}</td>
+            <td>${item.count?number*item.price/100}</td>
         </tr>
         </#list>
     <tr>
@@ -92,7 +92,7 @@
             <td style="text-align: left">${item.name}</td>
             <td>${item.count}</td>
             <td>${item.price/100}</td>
-            <td>${item.count*item.price/100}</td>
+            <td>${item.count?number*item.price/100}</td>
         </tr>
         </#list>
     <tr>
@@ -121,7 +121,7 @@
             <td style="text-align: left">${item.name}</td>
             <td>${item.count}</td>
             <td>${item.price/100}</td>
-            <td>${item.count*item.price/100}</td>
+            <td>${item.count?number*item.price/100}</td>
         </tr>
         </#list>
     <tr>
